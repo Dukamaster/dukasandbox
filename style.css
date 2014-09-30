@@ -953,7 +953,6 @@ blockquote::before {
   margin-bottom: 10px;
   background-color: #333;
   clear: both;
-  /*padding-top: 40px;*/
 }
 .footer-widgets p {
   margin-bottom: 16px;
@@ -972,6 +971,10 @@ blockquote::before {
 
 .footer-widgets .wrap > div {
   display: table-cell;
+}
+
+.footer-widgets .wrap {
+  max-width: 90%;
 }
 
 .footer-widgets .widgettitle {
