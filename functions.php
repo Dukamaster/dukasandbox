@@ -178,5 +178,8 @@ function get_read_more_link() {
    return '...<a class="moretag" href="'. get_permalink() . '"> Continue reading <span class="meta-nav">&rarr;</span></a>';
 }
 
-//* Remove the post meta function
-remove_action( 'genesis_after_post_content', 'genesis_post_meta' );
+add_filter('genesis_breadcrumb_args', 'remove_breadcrumbs_yourarehere_text');
+function remove_breadcrumbs_yourarehere_text( $args ) {
+    $args['labels']['prefix'] = '';
+    return $args;
+}

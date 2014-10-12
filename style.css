@@ -45,6 +45,8 @@
     13 Widgets/Plugins
         eNews
         Gravity Forms
+        Ultimate Post
+        Popular Post
 */
 /*
 01 Import Fonts
@@ -95,7 +97,7 @@ body {
   font-size: 1rem;
   line-height: 1.6211;
   font-family: "Roboto";
-  color: #333333;
+  color: #212121;
 }
 
 p.pages,
@@ -473,10 +475,10 @@ h6,
 .header-image #title a,
 .header-image #title-area {
   display: block;
-  float: left;
+  /*float: left;*/
   min-height: 120px;
   overflow: hidden;
-  width: 50%;
+  width: 70%;
 }
 
 .header-image #description {
@@ -488,6 +490,10 @@ h6,
   margin-top: 56px;
   margin-top: 3.29412rem;
   width: 100%;
+}
+#title a {
+  font: 0/0 a;
+  background: url(images/logo.png) no-repeat;
 }
 
 /*
@@ -506,14 +512,14 @@ h6,
 }
 
 #nav {
-  background-color: #3b3d42;
+  background-color: #37474f;
 }
 
 .genesis-nav-menu.menu-primary a {
   color: white;
 }
 .genesis-nav-menu.menu-primary .sub-menu {
-  background: #3b3d42;
+  background: #37474f;
 }
 .genesis-nav-menu.menu-primary .sub-menu a {
   margin-right: 0;
@@ -685,23 +691,24 @@ h6,
 }
 
 .navigation li a,
-.navigation li a:hover,
 .navigation li.active a,
 .navigation li.disabled {
-  background-color: #4c5558;
-  border-radius: 3px;
+  background-color: #424242;
+  border-radius: 0;
   cursor: pointer;
   padding: 12px;
   padding: 0.70588rem;
   color: white;
 }
 
-.navigation li a:hover,
 .navigation li.active a {
-  background-color: white;
+  background-color: #03a9f4;
   color: #000d11;
 }
 
+.navigation li a:hover {
+  background-color: #03a9f4;
+}
 /*
 05 Meta and Comments
 ---------------------------------------------------------------------------------------------------- */
@@ -912,6 +919,18 @@ blockquote::before {
   word-wrap: break-word;
 }
 
+.sidebar .widget-title {
+  line-height: 40px;
+  margin-bottom: 2%;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 0;
+  font-weight: 700;
+  color: #37474f;
+  font-size: 120%;
+}
+
 /*
 08 Sidebar Alt
 ---------------------------------------------------------------------------------------------------- */
@@ -951,7 +970,7 @@ blockquote::before {
   padding: 32px 0 16px;
   padding: 1.88235rem 0 0.94118rem;
   margin-bottom: 10px;
-  background-color: #333;
+  background-color: #263238;
   clear: both;
 }
 .footer-widgets p {
@@ -967,6 +986,7 @@ blockquote::before {
   margin-bottom: 6px;
   margin-bottom: 0.35294rem;
   word-wrap: break-word;
+  float: left;
 }
 
 .footer-widgets .wrap > div {
@@ -993,6 +1013,22 @@ blockquote::before {
 
 #footer ul.menu-footer a {
   padding: 0rem .75rem;
+}
+
+.widget_categories li {
+  padding: 0;
+  margin: 0 2px 5px;
+  background-color: #757575;
+}
+
+.widget_categories li a{
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.widget_categories li:hover{
+  background-color: #424242;
 }
 
 /*********************************************************************************************
@@ -1183,3 +1219,75 @@ div.gform_wrapper form li {
   margin: 16px 0 0;
   margin: 0.94118rem 0 0;
 }
+
+/* Ultimate Post */
+.widget .upw-posts .entry-title {
+  margin-bottom: 10px;
+}
+.upw-posts .entry-title a {
+  font-size: 1rem;
+  color: #212121;
+  font-weight: normal;
+}
+
+.upw-posts .entry-title a:hover {
+  text-decoration: none !important;
+  color: #03a9f4;
+}
+
+.widget .upw-posts .entry-meta {
+  margin-bottom: 0;
+  line-height: 0.3;
+}
+
+.widget .upw-posts article {
+  padding: 0;
+  padding-bottom: 1em;
+  margin-left: -1em;
+  margin-bottom: 1em;
+}
+
+/* Popular Post */
+.wpp-list {
+  margin-left: -1em;
+}
+
+.wpp-list .wpp-date {
+  color: #888;
+  font-size: 1.5em;
+  line-height: 1.4;
+  font-weight: normal;
+}
+
+.wpp-list a.wpp-post-title {
+  font-size: 1rem;
+  color: #212121;
+  font-weight: normal;
+}
+
+.wpp-list a.wpp-post-title:hover {
+  color: #03a9f4;
+}
+
+.wpp-list li {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+/*ssba*/
+.ssba, .ssba a {
+  margin-bottom: 1em;
+  padding-right: 5px;
+}
+
+/**/
+.entry-content .yarpp-related a {
+  color: #212121;
+  font-weight: normal !important;
+}
+
+.entry-content .yarpp-related a:hover {
+  color: #03a9f4;
+}
+
