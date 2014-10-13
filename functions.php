@@ -130,6 +130,11 @@ function gs_register_sidebars() {
 			'name'			=> __( 'Portfolio', CHILD_DOMAIN ),
 			'description'	=> __( 'This is the portfolio page template', CHILD_DOMAIN ),
 		),
+		 array(
+			'id'				=> 'wpselect_after_post_content',
+			'name'			=> __( 'New Widget', 'Dukasandbox' ),
+			'description'	=> __( 'This is the code for registering a new widget in your functions file.', CHILD_DOMAIN ),
+		),
 	);
 
 	foreach ( $sidebars as $sidebar )
@@ -182,4 +187,11 @@ add_filter('genesis_breadcrumb_args', 'remove_breadcrumbs_yourarehere_text');
 function remove_breadcrumbs_yourarehere_text( $args ) {
     $args['labels']['prefix'] = '';
     return $args;
+}
+
+add_action( 'genesis_after_entry_content', 'wpselect_after_post_content', 1 );
+function wpselect_after_post_content() {
+        genesis_widget_area( 'wpselect_after_post_content', array(
+        'before' => '<aside class="wpselect_after_post_content widget-area">',
+        ) );
 }
