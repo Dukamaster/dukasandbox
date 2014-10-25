@@ -174,7 +174,9 @@ function gs_footer_navigation() {
 	gs_navigation( 'footer', $footer_menu_args );
 }
 
-//* Remove the entry meta in the entry footer (requires HTML5 theme support)
+/**
+ * Remove the entry meta in the entry footer (requires HTML5 theme support)
+ */
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 // Add Read More Link to Excerpts
 add_filter('excerpt_more', 'get_read_more_link');
@@ -183,15 +185,26 @@ function get_read_more_link() {
    return '...<a class="moretag" href="'. get_permalink() . '"> Continue reading <span class="meta-nav">&rarr;</span></a>';
 }
 
+/**
+ * Change breadcrumb format
+ */
 add_filter('genesis_breadcrumb_args', 'remove_breadcrumbs_yourarehere_text');
 function remove_breadcrumbs_yourarehere_text( $args ) {
     $args['labels']['prefix'] = '';
     return $args;
 }
 
-add_action( 'genesis_after_entry_content', 'wpselect_after_post_content', 1 );
-function wpselect_after_post_content() {
-        genesis_widget_area( 'wpselect_after_post_content', array(
-        'before' => '<aside class="wpselect_after_post_content widget-area">',
-        ) );
-}
+/**
+ * Enqueue Google Fonts using a function
+ */
+add_action( 'wp_enqueue_scripts', 'child_load_google_fonts' );
+function child_load_google_fonts() {  	
+  	// Setup font arguments
+	$query_args = array(
+		'family' => 'Arimo|Varela|Roboto' // Change this font to whatever font you'd like
+	);
+ 	// A safe way to register a CSS style file for later use
+	wp_register_style( 'google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	// A safe way to add/enqueue a CSS style file to a WordPress generated page
+	wp_enqueue_style( 'google-fonts' );
+}	
